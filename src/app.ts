@@ -2,6 +2,8 @@ import express from "express";
 import morgan from "morgan";
 import { config } from "dotenv";
 
+import routes from "./routes";
+
 class App {
   public app: express.Application = express();
 
@@ -21,15 +23,7 @@ class App {
         extended: false,
       })
     );
-
-    this.app.get("/details", (req, res) => {
-      res.status(200).json({
-        version: process.env.npm_package_version,
-        author: process.env.npm_package_author_name,
-        email: process.env.npm_package_author_email,
-        repositoryUrl: process.env.npm_package_repository_url,
-      });
-    });
+    this.app.use(routes);
   }
 }
 
