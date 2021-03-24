@@ -1,4 +1,4 @@
-import { Request, Response, Router, IRouterMatcher } from "express";
+import { Request, Response, Router } from "express";
 
 class Routes {
   public router: Router = Router();
