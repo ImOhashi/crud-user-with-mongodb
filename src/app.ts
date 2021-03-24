@@ -3,12 +3,14 @@ import morgan from "morgan";
 import { config } from "dotenv";
 
 import routes from "./routes";
+import connect from "./database/connect";
 
 class App {
   public app: express.Application = express();
 
   constructor() {
     config();
+    connect();
 
     this.middlewares();
   }
