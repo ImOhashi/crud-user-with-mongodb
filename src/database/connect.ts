@@ -3,27 +3,13 @@ import mongoose from "mongoose";
 import { DatabaseError } from "../errors/";
 
 class Connect {
-  private host: string;
-  private port: string;
-  private user: string;
-  private pass: string;
-  private collection: string;
-
-  constructor() {
-    this.host = process.env.MONGO_HOST;
-    this.port = process.env.MONGO_PORT;
-    this.user = process.env.MONGO_USER;
-    this.pass = process.env.MONGO_PASS;
-    this.collection = process.env.MONGO_COLLECTION;
-  }
-
   public connect(): void {
     mongoose.connect(
-      `mongodb://${this.host}:${this.port}`,
+      `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}`,
       {
-        user: this.user,
-        pass: this.pass,
-        dbName: this.collection,
+        user: process.env.MONGO_USER,
+        pass: process.env.MONGO_PASS,
+        dbName: process.env.MONGO_COLLECTION,
         useNewUrlParser: true,
         useUnifiedTopology: true,
       },
