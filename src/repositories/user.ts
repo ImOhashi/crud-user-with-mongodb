@@ -25,4 +25,8 @@ export default class UserRepository {
   public async createUser(user: User): Promise<User> {
     return new UserModel(user).save();
   }
+
+  public async deleteUser(userId: string): Promise<User> {
+    return UserModel.findByIdAndDelete({ _id: Types.ObjectId(userId) });
+  }
 }
