@@ -1,9 +1,9 @@
 import { Types } from "mongoose";
 
 import UserModel from "../models/user";
-import { User } from "../interfaces/";
+import { IUserRepository, User } from "../interfaces/";
 
-export default class UserRepository {
+export default class UserRepository implements IUserRepository {
   public async getUser(userId: string): Promise<User> {
     return UserModel.findOne({
       _id: Types.ObjectId(userId),
