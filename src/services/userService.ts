@@ -1,7 +1,6 @@
 import { IUserRepository, IUserService, User } from "../interfaces";
 
 export default class UserService implements IUserService {
-  
   private userRepository: IUserRepository;
 
   constructor(userRepository: IUserRepository) {
