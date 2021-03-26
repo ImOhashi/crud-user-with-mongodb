@@ -10,7 +10,7 @@ export default class UserRepository implements IUserRepository {
     }).lean();
   }
 
-  public async getUsers(userIds: string[]): Promise<User[]> {
+  public async getUsers(userIds?: string[]): Promise<User[]> {
     const newUserIds: Types.ObjectId[] = userIds.map((userId) =>
       Types.ObjectId(userId)
     );
