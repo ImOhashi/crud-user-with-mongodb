@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+import { Logger } from "../helpers";
 import { DatabaseError } from "../errors/";
 
 class Connect {
@@ -17,7 +18,7 @@ class Connect {
         if (err) {
           throw new DatabaseError(err);
         } else {
-          console.log("Database is connected");
+          Logger.info("Database is connected");
         }
       }
     );
