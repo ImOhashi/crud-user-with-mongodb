@@ -22,6 +22,10 @@ class Connect {
       }
     );
   }
+
+  public closeConnection(): void {
+    mongoose.disconnect();
+  }
 }
 
-export default new Connect().connect;
+export default new Connect();
