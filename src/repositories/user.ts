@@ -26,6 +26,10 @@ export default class UserRepository {
     return new UserModel(user).save();
   }
 
+  public async updateUser(userId: string, user: User): Promise<User> {
+    return UserModel.findByIdAndUpdate(userId, user);
+  }
+
   public async deleteUser(userId: string): Promise<User> {
     return UserModel.findByIdAndDelete({ _id: Types.ObjectId(userId) });
   }
