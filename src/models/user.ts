@@ -20,7 +20,7 @@ const UserSchema: Schema = new Schema(
   {
     timestamps: false,
     collection: "users",
-    id: false
+    id: false,
   }
 );
 
