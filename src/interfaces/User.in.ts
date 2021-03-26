@@ -1,7 +1,9 @@
 import { Document } from "mongoose";
 
-export interface User extends Document {
-  name: String,
-  email: String,
-  password: String
+export interface User {
+  name: String;
+  email: String;
+  password: String;
 }
+
+export interface UserDocument extends User, Document {}

@@ -1,6 +1,6 @@
 import { model, Model, Schema } from "mongoose";
 
-import { User } from "../interfaces";
+import { UserDocument } from "../interfaces";
 
 const UserSchema: Schema = new Schema(
   {
@@ -24,6 +24,6 @@ const UserSchema: Schema = new Schema(
   }
 );
 
-const UserModel: Model<User> = model("UserModel", UserSchema);
+const UserModel: Model<UserDocument> = model("UserModel", UserSchema);
 
 export default UserModel;
